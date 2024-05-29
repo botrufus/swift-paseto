@@ -5,6 +5,9 @@ A Swift implementation of [PASETO](https://github.com/paragonie/paseto).
 Paseto is everything you love about JOSE (JWT, JWE, JWS) without any of the
 [many design deficits that plague the JOSE standards](https://paragonie.com/blog/2017/03/jwt-json-web-tokens-is-bad-standard-that-everyone-should-avoid).
 
+# THIS FORK IS A DUMMY FORK
+
+This fork was created inorder to fix an unstable depency issue. See [this issue](https://github.com/aidantwoods/swift-paseto/issues/22)
 
 # Contents
 * [What is Paseto?](#what-is-paseto)
@@ -58,7 +61,7 @@ either want to check or produce (i.e. encrypted if using local tokens,
 or signed if using public tokens).
 
 The Paseto Swift library passes this information via type arguments (generics)
-so entire classes of misuse examples aren't possible (e.g. 
+so entire classes of misuse examples aren't possible (e.g.
 creating a version 2 key and accidentally attempting to produce a version 1
 token, or trying to decrypt a signed token). In-fact, the functions that would
 enable you to even attempt these examples just don't exist.
