@@ -5,7 +5,7 @@ public struct Message<M: Module> {
     public typealias Payload = M.Payload
 
     public let header: Header = Message.header
-    let payload: Payload
+    public let payload: Payload
     public let footer: Bytes
 
     init (payload: Payload, footer: BytesRepresentable = Bytes()) {
@@ -71,7 +71,7 @@ extension Message {
 }
 
 extension Message {
-    func token(package: Package) throws -> Token {
+    public func token(package: Package) throws -> Token {
         guard let footer = String(bytes: package.footer) else {
             throw Exception.badEncoding(
                 "Could not convert the footer to a UTF-8 string."
