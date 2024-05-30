@@ -4,8 +4,8 @@ extension Version4.Public: Module {
     public struct Payload {
         static let signatureLength = Sign.Bytes
 
-        let message: Bytes
-        let signature: Bytes
+        public let message: Bytes
+        public let signature: Bytes
     }
 }
 
