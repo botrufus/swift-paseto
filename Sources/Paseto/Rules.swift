@@ -75,6 +75,23 @@ public extension Rules {
             return .pass
         }
     }
+    
+    static func notExpired(padding: TimeInterval) -> Rule {
+        return { token in
+            guard let exp = token.expiration else {
+                return .violation(Exception.badExp("The claim `exp' was not present."))
+            }
+            
+            guard Date() < (exp - padding) else {
+                return .violation(Exception.badExp(
+                    "This token has expired."
+                ))
+            }
+
+            return .pass
+        }
+    }
+    
 
     static func subject(_ subject: String) -> Rule {
         return { token in
