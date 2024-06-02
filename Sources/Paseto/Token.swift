@@ -4,7 +4,11 @@ import TypedJSON
 public struct Token {
     public var claims: [String: JSON.Value]
     public var footer: String
-    internal var timeFormatter = ISO8601DateFormatter()
+    internal var timeFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        return formatter
+    }()
 
     public init () {
         self.claims = [:]
