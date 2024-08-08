@@ -23,7 +23,7 @@ let package = Package(
     dependencies: [
         .package(
             name: "Sodium",
-            url: "https://github.com/feelingsonice/swift-sodium.git",
+            url: "https://github.com/botrufus/swift-sodium.git",
             .exact("0.9.2")
         ),
         .package(
